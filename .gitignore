@@ -1,0 +1,7 @@
+node_modules/
+assets/node_modules/
+_build/
+tmp/*
+*.zip
+*.db
+src/db/dict/*.db
