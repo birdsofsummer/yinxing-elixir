@@ -26,6 +26,13 @@ config :yinxing_e, YinxingE.Repo,
 # with webpack to recompile .js and .css sources.
 config :yinxing_e, YinxingEWeb.Endpoint,
   http: [port: 4000],
+  https: [
+    port: 4001,
+    cipher_suite: :strong,
+    keyfile: "priv/cert/selfsigned_key.pem",
+    certfile: "priv/cert/selfsigned.pem"
+  ],
+ # force_ssl: [rewrite_on: [:x_forwarded_proto], host: nil],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,

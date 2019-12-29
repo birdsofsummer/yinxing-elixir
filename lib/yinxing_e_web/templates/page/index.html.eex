@@ -1,6 +1,11 @@
 <section class="phx-hero">
+
   <h1><%= gettext "Welcome to %{name}!", name: "ccc" %></h1>
+  <h1><%= @message %></h1>
+  <h1><%= @name %></h1>
   <p>O(∩_∩)O~</p>
+
+
 </section>
 
 <section class="row">

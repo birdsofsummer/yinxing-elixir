@@ -2,7 +2,8 @@ defmodule YinxingEWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", YinxingEWeb.RoomChannel
+   channel "room:*", YinxingEWeb.RoomChannel
+   channel "users:*",YinxingEWeb.FoodChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After

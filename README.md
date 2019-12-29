@@ -1,4 +1,8 @@
-# YinxingE
+# 银杏
+
+```bash 
+    mix phx.routes 
+```
 
 To start your Phoenix server:
 

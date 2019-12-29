@@ -10,8 +10,18 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :yinxing_e, YinxingEWeb.Endpoint,
+  http: [port: {:system, "PORT"}],
   url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  https: [
+    port: 443,
+    otp_app: :hello,
+    keyfile: System.get_env("YINXING_APP_SSL_KEY_PATH"),
+    certfile: System.get_env("YINXING_SOME_APP_SSL_CERT_PATH"),
+    # OPTIONAL Key for intermediate certificates:
+    cacertfile: System.get_env("INTERMEDIATE_CERTFILE_PATH")
+    # "./priv/cert/key.pem"|>Path.expand( __DIR__)
+  ]  
 
 # Do not print debug messages in production
 config :logger, level: :info

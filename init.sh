@@ -3,7 +3,27 @@
 # https://www.postgresql.org/docs/12/tutorial-table.html
 
 
+
+
+
+
+
 name="yinxing_e"
+
+######################################ssl###############################################################
+
+pass=111111
+priv=selfsigned_key.pem
+pub=rsa_public.key
+cert=selfsigned.pem
+
+mkdir -p priv/cert
+cd priv/cert
+
+openssl genrsa -aes256 -passout pass:$pass -out $priv 2048
+openssl rsa -in $priv -passin pass:$pass -pubout -out $pub
+openssl req -new -x509 -days 365 -key $priv -out $cert
+
 ##############################################pg-server###################################################
 su - postgres
 postgres

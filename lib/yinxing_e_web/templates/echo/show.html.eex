@@ -1,3 +1,7 @@
 <div class="phx-hero">
-  <h2>echo q=<%= @q %>!</h2>
+  <h2><%= @q %></h2>
+  <h2><%= @x %></h2>
 </div>
+
+
+
